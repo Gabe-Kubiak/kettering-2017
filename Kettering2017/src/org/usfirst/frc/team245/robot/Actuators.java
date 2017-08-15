@@ -1,15 +1,8 @@
 package org.usfirst.frc.team245.robot;
 
 //import edu.wpi.first.wpilibj.CANTalon;
-//import edu.wpi.first.wpilibj.CANTalon.FeedbackDevice;
-//import edu.wpi.first.wpilibj.CANTalon.TalonControlMode;
-import edu.wpi.first.wpilibj.PWM;
-import edu.wpi.first.wpilibj.SafePWM;
-import edu.wpi.first.wpilibj.PWMSpeedController;
-import edu.wpi.first.wpilibj.TalonSRX;
-import edu.wpi.first.wpilibj.PIDSourceType;
-import edu.wpi.first.wpilibj.Solenoid;
-import edu.wpi.first.wpilibj.VictorSP;
+import edu.wpi.first.wpilibj.Talon;
+
 /**
  * All of our robot's actuators including motors and pneumatics
  */
@@ -22,9 +15,9 @@ public class Actuators {
 	//The PID constants for the arm
 
 	// Motors
-	private static VictorSP leftDriveMotor;
-	private static VictorSP rightDriveMotor;
-	private static TalonSRX leftArmMotor;
+	private static Talon leftDriveMotor;
+	private static Talon rightDriveMotor;
+//	private static TalonSRX leftArmMotor;
 
 	// Pneumatics
 
@@ -34,11 +27,11 @@ public class Actuators {
 	public static void init() {
 		// TODO: Change ID's
 		// Motors
-		rightDriveMotor = new VictorSP(0);
+		rightDriveMotor = new Talon(0);
 		rightDriveMotor.setInverted(true);
 
 
-		leftDriveMotor = new VictorSP(1);
+		leftDriveMotor = new Talon(1);
 	    //leftDriveMotor.setInverted(true);
 
 	}
@@ -59,14 +52,14 @@ public class Actuators {
 
 
 	//needed for Dashboard
-	 public static VictorSP getRightDriveMotor() {
+	 public static Talon getRightDriveMotor() {
 	 return rightDriveMotor;
 	 }
 
 	/**
 	 * @return the leftDrive
 	 */
-	public static VictorSP getLeftDriveMotor() {
+	public static Talon getLeftDriveMotor() {
 		return leftDriveMotor;
 	}
 

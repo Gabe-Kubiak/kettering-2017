@@ -25,8 +25,8 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void robotInit() {
 		chooser = new SendableChooser();
+		Actuators.init();
 		Drive.init();
-		
 //	chooser.addDefault("Forward", new Forward());
 //	chooser.addObject("left two positions", new FarLeft());
 		
@@ -89,7 +89,8 @@ public class Robot extends IterativeRobot {
 		// teleop starts running. If you want the autonomous to
 		// continue until interrupted by another command, remove
 		// this line or comment it out.
-		Actuators.teleopInit();
+		
+		
 		if (autonomousCommand != null)
 			autonomousCommand.cancel();
 	}
@@ -99,7 +100,7 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void teleopPeriodic() {
-		Drive.drive(Gamepad.primary.getTriggers(), Gamepad.primary.getLeftX());
+		Drive.drive(-Gamepad.primary.getTriggers(), Gamepad.primary.getLeftX());
 		Scheduler.getInstance().run();
 	}
 
