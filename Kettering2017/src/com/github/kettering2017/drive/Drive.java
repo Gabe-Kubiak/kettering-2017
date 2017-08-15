@@ -45,6 +45,14 @@ public class Drive {
 		Actuators.getLeftArmMotor().set(liftSpeed);
 		Actuators.getRightArmMotor().set(liftSpeed);
 	}
+	
+	public static void jaws(double jawsSpeed) {
+		Actuators.getJawsMotor().set(jawsSpeed);
+	}
+	
+	public static void wrist(double wristSpeed) {
+		Actuators.getWristMotor().set(wristSpeed);
+	}
 	/**
 	 * Drives robot with only linear component
 	 * @param speed

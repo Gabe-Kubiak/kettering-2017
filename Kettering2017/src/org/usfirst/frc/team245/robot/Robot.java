@@ -101,7 +101,18 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void teleopPeriodic() {
 		Drive.drive(-Gamepad.primary.getTriggers(), Gamepad.primary.getLeftX());
-		Drive.lift(Gamepad.secondary.getLeftY());
+		Drive.lift(Gamepad.primary.getRightY());
+		if (Gamepad.primary.getLB()) {
+			Drive.jaws(.5);
+		}else {
+			Drive.jaws(-.5);
+		}
+		if(Gamepad.primary.getRB()) {
+			Drive.wrist(.2);
+		}else {
+			Drive.wrist(-.2);
+		}
+		
 		Scheduler.getInstance().run();
 	}
 

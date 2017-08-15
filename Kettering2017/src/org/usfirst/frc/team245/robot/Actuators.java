@@ -22,6 +22,8 @@ public class Actuators {
 	private static Talon rightDriveMotor;
 	private static CANTalon rightArmMotor;
 	private static CANTalon leftArmMotor;
+	private static Talon jawsMotor;
+	private static Talon wristMotor;
 
 	// Pneumatics
 
@@ -38,6 +40,14 @@ public class Actuators {
 		leftDriveMotor = new Talon(1);
 	    //leftDriveMotor.setInverted(true);
 
+		
+		jawsMotor = new Talon(2);
+		//jawsMotor.setInverted(true);
+		
+		
+		wristMotor = new Talon(3);
+		//wristMotor.setInverted(true);
+		
 		
 		rightArmMotor = new CANTalon(8);
 		//rightArmMotor.setInverted(true);
@@ -72,6 +82,22 @@ public class Actuators {
 	 */
 	public static Talon getLeftDriveMotor() {
 		return leftDriveMotor;
+	}
+	
+	/**
+	 * 
+	 * @return the Jaws
+	 */
+	public static Talon getJawsMotor() {
+		return jawsMotor;
+	}
+	
+	/**
+	 * 
+	 * @return the Wrist
+	 */
+	public static Talon getWristMotor() {
+		return wristMotor;
 	}
 	
 	/**
