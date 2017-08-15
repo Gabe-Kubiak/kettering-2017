@@ -1,7 +1,10 @@
 package org.usfirst.frc.team245.robot;
 
+import com.ctre.CANTalon;
+
 //import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.TalonSRX;
 
 /**
  * All of our robot's actuators including motors and pneumatics
@@ -17,7 +20,8 @@ public class Actuators {
 	// Motors
 	private static Talon leftDriveMotor;
 	private static Talon rightDriveMotor;
-//	private static TalonSRX leftArmMotor;
+	private static CANTalon rightArmMotor;
+	private static CANTalon leftArmMotor;
 
 	// Pneumatics
 
@@ -34,6 +38,13 @@ public class Actuators {
 		leftDriveMotor = new Talon(1);
 	    //leftDriveMotor.setInverted(true);
 
+		
+		rightArmMotor = new CANTalon(8);
+		//rightArmMotor.setInverted(true);
+		
+		
+		leftArmMotor = new CANTalon(9);
+		leftArmMotor.setInverted(true);
 	}
 	
 	/**
@@ -62,8 +73,22 @@ public class Actuators {
 	public static Talon getLeftDriveMotor() {
 		return leftDriveMotor;
 	}
-
 	
+	/**
+	 * 
+	 * @return the rightArm
+	 */
+	public static CANTalon getRightArmMotor() {
+		return rightArmMotor;
+	}
+	
+	/**
+	 * 
+	 * @return the leftArm
+	 */
+	public static CANTalon getLeftArmMotor() {
+		return leftArmMotor;
+	}
 
 	
 }

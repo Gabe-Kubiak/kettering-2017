@@ -40,6 +40,11 @@ public class Drive {
 	    Actuators.getRightDriveMotor().set(rightSpeed);
 
 	}
+	
+	public static void lift(double liftSpeed) {
+		Actuators.getLeftArmMotor().set(liftSpeed);
+		Actuators.getRightArmMotor().set(liftSpeed);
+	}
 	/**
 	 * Drives robot with only linear component
 	 * @param speed
