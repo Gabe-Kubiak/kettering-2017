@@ -1,8 +1,8 @@
 package com.github.kettering2017.drive;
 
 import org.usfirst.frc.team245.robot.Gamepad;
-
-
+import com.ctre.CANTalon;
+import com.ctre.CANTalon.TalonControlMode;
 
 import org.usfirst.frc.team245.robot.Actuators;
 
@@ -11,7 +11,7 @@ import org.usfirst.frc.team245.robot.Actuators;
  *
  */
 public class Drive {
-	private static final double WHEEL_DIAMETER = 8;
+	private static final double WHEEL_DIAMETER = 6;
 	private static final double INCHES_PER_REV = WHEEL_DIAMETER * Math.PI;
 
 	/**
@@ -80,13 +80,13 @@ public class Drive {
 		leftDistance /= INCHES_PER_REV;
 		rightDistance /= INCHES_PER_REV;
 		
-		//Actuators.getLeftDriveMotor().changeControlMode(TalonControlMode.Position);
-//		Actuators.getLeftDriveMotor().set(-leftDistance);
-//		Actuators.getLeftDriveMotor().enable();
-//		
-//		//Actuators.getRightDriveMotor().changeControlMode(TalonControlMode.Position);
-//		Actuators.getRightDriveMotor().set(rightDistance);
-//		Actuators.getRightDriveMotor().enable();
+		Actuators.getLeftDriveMotor().changeControlMode(TalonControlMode.Position);
+		Actuators.getLeftDriveMotor().set(-leftDistance);
+		Actuators.getLeftDriveMotor().enable();
+		
+		Actuators.getRightDriveMotor().changeControlMode(TalonControlMode.Position);
+		Actuators.getRightDriveMotor().set(rightDistance);
+		Actuators.getRightDriveMotor().enable();
 	}
 	
 	
