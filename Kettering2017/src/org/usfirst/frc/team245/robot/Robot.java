@@ -2,6 +2,7 @@
 package org.usfirst.frc.team245.robot;
 
 import com.github.kettering2017.drive.Drive;
+import com.github.kettering2017.auton.Figure8;
 
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -27,8 +28,8 @@ public class Robot extends IterativeRobot {
 		chooser = new SendableChooser();
 		Actuators.init();
 		Drive.init();
-//	chooser.addDefault("Forward", new Forward());
-//	chooser.addObject("left two positions", new FarLeft());
+	chooser.addDefault("Forward", new Forward());
+	chooser.addObject("Figure 8", new Figure8());
 		
 		//Dash_Camera.camerasInit();
 	}
